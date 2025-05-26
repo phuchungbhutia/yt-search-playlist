@@ -1,0 +1,108 @@
+# YouTube Search Playlist Generator
+
+[![GitHub Actions](https://github.com/phuchungbhutia/yt-search-playlist/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)](https://github.com/phuchungbhutia/yt-search-playlist/actions)
+[![GitHub Pages](https://github.com/phuchungbhutia/yt-search-playlist/workflows/Pages%20build%20and%20deployment/badge.svg)](https://phuchungbhutia.github.io/yt-search-playlist/)
+
+Generate YouTube search playlists from a list of search terms, embed the results, and share easily.
+
+---
+
+## Live Demo
+
+[https://phuchungbhutia.github.io/yt-search-playlist/](https://phuchungbhutia.github.io/yt-search-playlist/)
+
+---
+
+## Features
+
+- Convert search term list into embedded YouTube playlists
+- Save/load playlists from browser LocalStorage
+- Rename and delete saved playlists
+- Share playlists via WhatsApp, Telegram, and Email
+- Trending search suggestions
+- Responsive and lightweight
+
+---
+
+## Folder Structure
+
+```
+
+yt-search-playlist/
+
+├── index.html       # Main HTML page
+
+├── style.css        # CSS styles
+
+├── script.js        # JavaScript logic
+
+├── README.md        # Project documentation
+
+└── .github/
+
+└── workflows/
+
+└── deploy.yml  # GitHub Actions workflow for deployment
+
+```
+
+---
+
+## How to Run Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/phuchungbhutia/yt-search-playlist.git
+cd yt-search-playlist
+```
+
+2. Open `index.html` in your preferred web browser.
+
+> **Note:** This is a static frontend project, no backend required.
+
+---
+
+## Git Commit & Push Commands
+
+```bash
+git add .
+git commit -m "Your descriptive commit message"
+git push origin main
+```
+
+---
+
+## Deploy on GitHub Pages
+
+* Push your changes to the `main` branch.
+* GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically deploy the site to GitHub Pages.
+* Visit: `https://phuchungbhutia.github.io/yt-search-playlist/`
+
+---
+
+## Contribution
+
+Contributions, issues, and feature requests are welcome!
+
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
+
+Please follow [GitHub Flow](https://guides.github.com/introduction/flow/) and keep commits clean.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](https://chatgpt.com/c/LICENSE).
+
+---
+
+## Contact
+
+Created by [phuchungbhutia](https://github.com/phuchungbhutia).
+
+Feel free to reach out for any questions or suggestions.
