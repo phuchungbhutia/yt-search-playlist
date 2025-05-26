@@ -3,18 +3,43 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main # This workflow runs when changes are pushed to the 'main' branch
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest # The type of runner that the job will execute on
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository # Step 1: Checkout the repository code
+      uses: actions/checkout@v4
+      with:
+        # This is important for GitHub Pages deployments, as it ensures
+        # the entire history is fetched, which can be useful for some setups.
+        fetch-depth: 0
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+    - name: Setup Node.js (Optional, but good practice for frontend projects)
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20' # Or any other LTS version you prefer
+
+    - name: Install dependencies (if you had any, e.g., for a build step)
+      # This project uses pure JS/HTML/CSS, so this step might not be strictly necessary,
+      # but it's good to include if you ever add build tools (like Webpack, Parcel).
+      run: |
+        echo "No npm dependencies to install for this project."
+        # If you were to add npm packages, you'd uncomment the line below:
+        # npm install
+
+    - name: Deploy to GitHub Pages # Step 2: Deploy the static files to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }} # Automatically provided by GitHub Actions
+        publish_dir: ./ # The directory containing your static files (root of the repo)
+        # The branch to publish to. For GitHub Pages, it's typically 'gh-pages'
+        # or the branch you configured (e.g., 'main' if you selected 'main' as source).
+        # We'll stick to 'gh-pages' as it's a common convention.
+        publish_branch: gh-pages
+        # If your GitHub Pages is configured to serve from 'main' branch directly,
+        # you might want to uncomment this and set publish_branch to main
+        # and ensure your 'main' branch is the source for GitHub Pages.
+        # cname: example.com # Uncomment and replace if you have a custom domain
