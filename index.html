@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>YouTube Search Playlist Generator</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Playlist Generator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>YouTube Search Playlist Generator</h1>
+    <div class="container">
+        <h1>Youtube Playlist Generator</h1>
 
-  <div id="playlistManager">
-    <h3>Saved Playlists</h3>
-    <select id="savedPlaylists" size="5" style="width: 100%;"></select>
-    <div style="margin-top: 8px;">
-      <button id="loadPlaylist">Load</button>
-      <button id="renamePlaylist">Rename</button>
-      <button id="deletePlaylist">Delete</button>
+        <div class="input-section">
+            <p>Enter search terms or phrases, one per line:</p>
+            <textarea id="searchTermInput" rows="10" placeholder="e.g.,
+JavaScript tutorial
+Python programming
+Web development basics
+Cooking recipes"></textarea>
+            <button id="generatePlaylistsButton">Generate Playlists</button>
+        </div>
+
+        <div id="downloadButtons" style="display: none; text-align: center; margin-top: 20px;">
+            <button id="downloadCsvButton" class="download-button">Download as CSV</button>
+            <button id="downloadTxtButton" class="download-button">Download as TXT</button>
+        </div>
+
+        <div id="resultsContainer" class="results-container">
+            </div>
+
+        <div id="errorContainer" class="error-container">
+            </div>
     </div>
-    <button id="saveCurrent" style="margin-top: 12px; width: 100%;">Save Current Playlist</button>
-  </div>
 
-  <textarea id="searchTerms" rows="6" placeholder="Enter search terms, one per line"></textarea>
-
-  <div id="suggestions">
-    <h3>Trending Searches</h3>
-    <ul id="suggestionList"></ul>
-  </div>
-
-  <button id="generateBtn">Generate Playlists</button>
-
-  <div id="results"></div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
